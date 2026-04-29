@@ -1,0 +1,17 @@
+{
+    "Event #1": {
+        "Event Details": "Study Discreet with Abass",
+        "Event Name": "Study Session",
+        "Insert Date in MM/DD/YYYY format": "04/30/2026"
+    },
+    "Event #2": {
+        "Event Details": "Meet with Dr. Karn",
+        "Event Name": "Office Hours",
+        "Insert Date in MM/DD/YYYY format": "04/29/2026"
+    },
+    "Event #3": {
+        "Event Details": "Study Discreet Maths",
+        "Event Name": "Study with Abass",
+        "Insert Date in MM/DD/YYYY format": "04/30/2026"
+    }
+}
