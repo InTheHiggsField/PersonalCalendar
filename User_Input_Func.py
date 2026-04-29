@@ -5,46 +5,6 @@ from tkcalendar import Calendar, DateEntry
 from tkinter import ttk, Event
 
 
-def example1():
-    def print_sel():
-        print(cal.selection_get())
-        cal.see(datetime.date(year=2016, month=2, day=5))
-
-    top = tk.Toplevel(root)
-
-    import datetime
-    today = datetime.date.today()
-
-    mindate = datetime.date(year=2026, month=4, day=1)
-    maxdate = datetime.date(year=2026, month=4, day=30)
-    print(mindate, maxdate)
-
-    cal = Calendar(top, font="Arial 14", selectmode='day', locale='en_US', mindate = mindate, maxdate = maxdate, disabledforground = 'red', curser = "hand1", year = 2026, month = 4, day = 3)
-    cal.pack(fill = 'both', expand = True)
-    ttk.Button(top, text="ok", command=print_sel).pack()
-
-def example2():
-
-    top = tk.Toplevel(root)
-    cal = Calendar(top, selectmode = 'none')
-    date = cal.datetime.today() + cal.timedelta(days = 2)
-    cal.calevent_create(date, 'Hello World', 'message')
-    cal.calevent_create(date, 'Reminder 2', 'reminder')
-    cal.calevent_create(date + cal.timedelta(days = -2), 'Reminder 1', 'reminder')
-    cal.calevent_create(date + cal.timedelta(days = 3) , 'Message', 'message')
-
-    cal.tag_config('reminder', background='red', foreground='yellow')
-    cal.pack(fill = 'both', expand = True)
-    ttk.Label(top, text="Hover over the events.").pack()
-
-def example3():
-    top = tk.Toplevel(root)
-
-    ttk.Label(top, text='Choose date').pack(padx=10, pady=10)
-
-    cal = DateEntry(top, width=12, background='darkblue', foreground='white', borderwidth=2, relief='ridge', year = 2026)
-    cal.pack(padx=10, pady=10)
-
 def add_event():
     top = tk.Toplevel(root)
     field_names = ["Insert Date in MM/DD/YYYY format", "Event Name", "Event Details"]
@@ -102,9 +62,6 @@ def detailed_calendar():
     ttk.Label(top, text=f"You have {len(event_data)} events soon").pack(padx=10, pady=10)
 
 root = tk.Tk()
-#ttk.Button(root, text="Calender", command=example1).pack(padx = 10, pady = 10)
-#ttk.Button(root, text="Calender w/ Events", command=example2).pack(padx = 10, pady = 10)
-#ttk.Button(root, text="Date Entry", command=example3).pack(padx = 10, pady = 10)
 ttk.Button(root, text="Add Event", command=add_event).pack(padx = 10, pady = 10)
 ttk.Button(root, text="Event Calendar", command=detailed_calendar).pack(padx = 10, pady = 10)
 root.mainloop()
